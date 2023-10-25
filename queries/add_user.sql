@@ -1,0 +1,3 @@
+INSERT INTO users (first_name, last_name, username, email, pass_hash, is_admin) VALUES ('Balakirev', 'Alexandre', 'alexbk', 'alex.balak@.fr', 'Azerty123*', 1)
+
+CREATE TABLE users (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `first_name` TEXT, `last_name` TEXT, `username` TEXT NOT NULL UNIQUE, `email` TEXT NOT NULL UNIQUE, `pass_hash` TEXT NOT NULL, `last_connected` TIMESTAMP, `connected` INTEGER DEFAULT 0, `is_admin` INTEGER DEFAULT 0);

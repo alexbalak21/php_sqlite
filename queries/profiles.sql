@@ -1,0 +1,1 @@
+CREATE TABLE profiles (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `created_by_id` INTEGER, `first_name` TEXT, `last_name` TEXT, 'tchno' TEXT, `experiance` TEXT, `location` TEXT, `description` TEXT, `img_src`TEXT, `active` INTEGER DEFAULT 1)

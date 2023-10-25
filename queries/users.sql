@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS users (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `first_name` TEXT, `last_name` TEXT, `username` TEXT, `email` TEXT NOT NULL UNIQUE, `pass_hash` TEXT NOT NULL, `last_connected` TIMESTAMP, `connected` INTEGER DEFAULT 0, `is_admin` INTEGER DEFAULT 0, `img_src` TEXT)

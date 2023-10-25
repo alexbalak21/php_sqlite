@@ -1,0 +1,2 @@
+25/10/2023  17:30:59 - EXECUETD QRY : INSERT INTO users (first_name, last_name, username, email, pass_hash, is_admin) VALUES ('Alexandre', 'Balakirev', 'alexbalak', 'alex.balak@outloo.com', '$2y$10$PmndRsMC0CTFIeyfmBR4AO/qZEZEDQnackYkRdsNoRG0O8FhZPLhi', '1')
+
