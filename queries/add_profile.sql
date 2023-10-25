@@ -1,1 +1,3 @@
+INSERT INTO profiles (created_by_id, first_name, last_name, tech, experiance, location, description, img_src, active) VALUES ('$user_id', '$first_name', '$last_name', '$tech', '$experiance', '$location', '$description', '$img_src', '$active')
+
 CREATE TABLE IF NOT EXISTS profiles (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `created_by_id` INTEGER, `first_name` TEXT, `last_name` TEXT, 'tech' TEXT, `experiance` TEXT, `location` TEXT, `description` TEXT, `img_src`TEXT, `active` INTEGER DEFAULT 1)

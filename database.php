@@ -61,6 +61,18 @@ function add_user($firstname = "John", $lastname = "Doe", $username = "JohnDoe",
 
 
 
+//PROFILES
+//CREATE
+function add_profile($user_id, $first_name, $last_name, $tech, $experiance, $location, $description, $img_src, $active)
+{
+    $querry = "INSERT INTO profiles (created_by_id, first_name, last_name, tech, experiance, location, description, img_src, active) VALUES ('$user_id', '$first_name', '$last_name', '$tech', '$experiance', '$location', '$description', '$img_src', '$active')";
+    execute_querry($qry = $querry);
+}
+
+
+
+
+
 
 global $conn;
 $conn = connect_sqlite("./db/database.sqlite");
@@ -68,9 +80,11 @@ $conn = connect_sqlite("./db/database.sqlite");
 $create_users = file_get_contents("./queries/users.sql");
 $create_profiles = file_get_contents("./queries/profiles.sql");
 execute_querry($create_users);
-// execute_querry($create_profiles);
+execute_querry($create_profiles);
 
 add_user("Alexandre", "Balakirev", "alexbalak", "alex.balak@outloo.com", "Azerty123+", 1);
+
+add_profile(1, "prenom", "nom", "java", "3 ans", "Lyon", "Descript...", "img location", 1);
 
 
 $conn = null;
