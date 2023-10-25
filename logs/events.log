@@ -1,2 +1,2 @@
-25/10/2023  21:15:35 - EXECUETD QRY : INSERT INTO profiles (created_by_id, first_name, last_name, tech, experiance, location, description, img_src, active) VALUES ('1', 'prenom', 'nom', 'java', '3 ans', 'Lyon', 'Descript...', 'img location', '1')
-
+25/10/2023  21:58:28 - USER ADDED :  Alexandre Balakirev
+25/10/2023  21:58:28 - PROFILE ADDED :  prenom nom BY USER 1
