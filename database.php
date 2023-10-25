@@ -101,20 +101,35 @@ function add_profile($user_id, $first_name, $last_name, $tech, $experiance, $loc
 global $conn;
 $conn = connect_sqlite("./db/database.sqlite");
 
-$create_users = file_get_contents("./queries/users.sql");
-$create_profiles = file_get_contents("./queries/profiles.sql");
+
+//QUERRIES TO CREATE USERS AND PROFILES TABLES
+$create_users = "CREATE TABLE IF NOT EXISTS users (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `first_name` TEXT, `last_name` TEXT, `username` TEXT, `email` TEXT NOT NULL UNIQUE, `pass_hash` TEXT NOT NULL, `last_connected` TIMESTAMP, `connected` INTEGER DEFAULT 0, `is_admin` INTEGER DEFAULT 0, `img_src` TEXT)";
+$create_profiles = "CREATE TABLE IF NOT EXISTS profiles (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `created_by_id` INTEGER, `first_name` TEXT, `last_name` TEXT, 'tech' TEXT, `experiance` TEXT, `location` TEXT, `description` TEXT, `img_src`TEXT, `cv_src` TEXT, `active` INTEGER DEFAULT 1)";
+
+
+
+//CREATING TABLES
 execute_querry($create_users);
 execute_querry($create_profiles);
 
-add_user("Alexandre", "Balakirev", "alexbalak", "alex.balak@outloo.com", "Azerty123+", 1);
-add_profile(1, "prenom", "nom", "java", "3 ans", "Lyon", "Descript...", "img location", 1);
-$result = select_all();
-
-foreach ($result as $profile) {
-    print_r($profile);
-    echo "<br>";
+function test_if_table_exists($table_name)
+{
+    try {
+        select_all("SELECT * FROM $table_name");
+    } catch (Exception $e) {
+        return false;
+    }
+    return true;
 }
 
+function test_crud()
+{
+}
+
+
+//TESTING INSARTS
+add_user("Alexandre", "Balakirev", "alexbalak", "alex.balak@outloo.com", "Azerty123+", 1);
+add_profile(1, "prenom", "nom", "java", "3 ans", "Lyon", "Descript...", "img location", 1);
 
 
 $conn = null;

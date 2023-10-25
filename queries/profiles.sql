@@ -1,1 +1,1 @@
-CREATE TABLE IF NOT EXISTS profiles (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `created_by_id` INTEGER, `first_name` TEXT, `last_name` TEXT, 'tech' TEXT, `experiance` TEXT, `location` TEXT, `description` TEXT, `img_src`TEXT, `active` INTEGER DEFAULT 1)
+CREATE TABLE IF NOT EXISTS profiles (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `created_by_id` INTEGER, `first_name` TEXT, `last_name` TEXT, 'tech' TEXT, `experiance` TEXT, `location` TEXT, `description` TEXT, `img_src`TEXT, `cv_src` TEXT, `active` INTEGER DEFAULT 1)
